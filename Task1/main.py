@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.generator import random_floats, random_unique_integers 
 from common.utils import get_logger  
+from Task1.avl_tree import AVLTree  
 from Task1.binary_search_tree import BinarySearchTree  
 from Task1.city import City
 logger = get_logger(__name__)
@@ -53,7 +54,18 @@ def demonstrate_binary_search_tree(cities: list[City]) -> None:
     deleted = tree.delete(sample.city_id)
     logger.info("Deleted city_id=%d -> %s. Remaining size = %d", sample.city_id, deleted, len(tree))
 
-
+def demonstrate_avl_tree(cities: list[City]) -> None:
+    """Insert every city into an AVL tree and demonstrate its balance."""
+    logger.info("--- AVL Tree ---")
+    tree: AVLTree[City] = AVLTree()
+    for city in cities:
+        tree.insert(city.city_id, city)
+    logger.info("Inserted %d cities. Tree height = %d (kept balanced)", len(tree), tree.height())
+ 
+    sample = cities[-1]
+    found = tree.search(sample.city_id)
+    logger.info("Search for city_id=%d -> %s", sample.city_id, found)
+ 
 
 
 def main() -> None:
@@ -62,7 +74,8 @@ def main() -> None:
     cities = build_demo_cities()
 
     demonstrate_binary_search_tree(cities)
-   
+    demonstrate_avl_tree(cities)
+
     logger.info(
         "Task 1 demonstration complete. Run 'python -m Task1.benchmark' for performance results."
     )
