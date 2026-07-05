@@ -11,6 +11,7 @@ from common.utils import get_logger
 from Task1.avl_tree import AVLTree  
 from Task1.binary_search_tree import BinarySearchTree  
 from Task1.city import City
+from Task1.hash_table import HashTable 
 logger = get_logger(__name__)
 
 DEMO_CITY_COUNT = 10
@@ -66,7 +67,18 @@ def demonstrate_avl_tree(cities: list[City]) -> None:
     found = tree.search(sample.city_id)
     logger.info("Search for city_id=%d -> %s", sample.city_id, found)
  
-
+def demonstrate_hash_table(cities: list[City]) -> None:
+    """Insert every city into a hash table and demonstrate O(1) lookup."""
+    logger.info("--- Hash Table (separate chaining) ---")
+    table: HashTable[City] = HashTable()
+    for city in cities:
+        table.insert(city.city_id, city)
+    logger.info("Inserted %d cities. Load factor = %.2f", len(table), table.load_factor)
+ 
+    sample = cities[0]
+    found = table.search(sample.city_id)
+    logger.info("Search for city_id=%d -> %s", sample.city_id, found)
+ 
 
 def main() -> None:
     """Run all four data structure demonstrations."""
@@ -75,6 +87,7 @@ def main() -> None:
 
     demonstrate_binary_search_tree(cities)
     demonstrate_avl_tree(cities)
+    demonstrate_hash_table(cities)
 
     logger.info(
         "Task 1 demonstration complete. Run 'python -m Task1.benchmark' for performance results."
