@@ -3,6 +3,8 @@ import sys
 from pathlib import Path
 from common.utils import get_logger   
 from graph import Graph  
+from dijkstra import dijkstra
+
 
 logger = get_logger(__name__)
 
