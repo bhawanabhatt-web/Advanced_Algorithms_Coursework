@@ -4,7 +4,7 @@ from pathlib import Path
 from common.utils import get_logger   
 from graph import Graph  
 from dijkstra import dijkstra
-
+from prim import prim_mst
 
 logger = get_logger(__name__)
 
