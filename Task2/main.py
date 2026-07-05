@@ -1,10 +1,13 @@
 from __future__ import annotations
 import sys
 from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT))
 from common.utils import get_logger   
 from graph import Graph  
 from dijkstra import dijkstra
 from prim import prim_mst
+from bellman_ford import bellman_ford
 
 logger = get_logger(__name__)
 
