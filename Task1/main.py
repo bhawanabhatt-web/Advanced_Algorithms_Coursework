@@ -12,6 +12,8 @@ from Task1.avl_tree import AVLTree
 from Task1.binary_search_tree import BinarySearchTree  
 from Task1.city import City
 from Task1.hash_table import HashTable 
+from Task1.min_heap import MinHeap  
+
 logger = get_logger(__name__)
 
 DEMO_CITY_COUNT = 10
@@ -79,6 +81,18 @@ def demonstrate_hash_table(cities: list[City]) -> None:
     found = table.search(sample.city_id)
     logger.info("Search for city_id=%d -> %s", sample.city_id, found)
  
+def demonstrate_min_heap(cities: list[City]) -> None:
+    """Push every city into a Min-Heap keyed by population and pop in order."""
+    logger.info("--- Min-Heap (priority = population) ---")
+    heap: MinHeap[City] = MinHeap()
+    for city in cities:
+        heap.push(float(city.population), city)
+ 
+    logger.info("Popping cities by ascending population:")
+    while not heap.is_empty():
+        priority, city = heap.pop()
+        logger.info("  population=%.0f -> %s", priority, city.name)
+ 
 
 def main() -> None:
     """Run all four data structure demonstrations."""
@@ -88,6 +102,8 @@ def main() -> None:
     demonstrate_binary_search_tree(cities)
     demonstrate_avl_tree(cities)
     demonstrate_hash_table(cities)
+    demonstrate_min_heap(cities)
+
 
     logger.info(
         "Task 1 demonstration complete. Run 'python -m Task1.benchmark' for performance results."
