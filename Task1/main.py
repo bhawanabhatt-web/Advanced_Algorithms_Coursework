@@ -20,14 +20,7 @@ DEMO_CITY_COUNT = 10
 
 
 def build_demo_cities(count: int = DEMO_CITY_COUNT) -> list[City]:
-    """Build a small, reproducible list of demo cities.
-
-    Args:
-        count: Number of cities to generate. Defaults to ``10``.
-
-    Returns:
-        A list of :class:`City` records.
-    """
+    
     ids = random_unique_integers(count, low=1, high=count * 5, seed=42)
     populations = random_floats(count, 10_000, 2_000_000, seed=43)
     return [
