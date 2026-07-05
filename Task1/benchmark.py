@@ -222,9 +222,10 @@ def run() -> None:
     )
 
 
+
 if __name__ == "__main__":
     try:
         run()
-    except Exception:  # noqa: BLE001 -- top-level entry point: log and re-raise
+    except Exception:  # top-level entry point: log and re-raise
         logger.exception("Task 1 benchmark suite failed.")
         raise
