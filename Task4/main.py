@@ -4,8 +4,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  
 from common.generator import random_floats  
 from common.utils import get_logger  
-from packing import Item  
-from packing import first_fit_decreasing, local_search, simulated_annealing
+from first_fit_decreasing import first_fit_decreasing 
+from local_search import local_search
+from packing import Item 
+from simulated_annealing import simulated_annealing  
+
 logger = get_logger(__name__)
 
 DEMO_ITEM_COUNT = 30
@@ -73,6 +76,6 @@ def main() -> None:
 if __name__ == "__main__":
     try:
         main()
-    except Exception:  # noqa: BLE001 -- top-level entry point: log and re-raise
+    except Exception:  
         logger.exception("Task 4 demonstration failed.")
         raise
