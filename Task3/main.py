@@ -4,6 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1])) 
 from common.utils import get_logger  
 from job_scheduling import Job, weighted_job_scheduling 
+from platform_scheduling import min_platforms, min_platforms_exact
 
 logger = get_logger(__name__)
 
