@@ -1,16 +1,10 @@
 from __future__ import annotations
-
 from dataclasses import dataclass
 from typing import Generic, Optional, TypeVar
-
 V = TypeVar("V")
-
 __all__ = ["AVLTree"]
-
-
 @dataclass
 class _AVLNode(Generic[V]):
-   
     key: int
     value: V
     left: Optional["_AVLNode[V]"] = None

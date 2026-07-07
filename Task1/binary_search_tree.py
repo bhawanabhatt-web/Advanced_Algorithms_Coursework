@@ -1,12 +1,8 @@
 from __future__ import annotations
-
 from dataclasses import dataclass
 from typing import Generic, Optional, TypeVar
-
 V = TypeVar("V")
-
 __all__ = ["BinarySearchTree"]
-
 
 @dataclass
 class _BSTNode(Generic[V]):

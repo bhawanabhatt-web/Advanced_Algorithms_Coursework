@@ -3,7 +3,6 @@ import bisect
 from dataclasses import dataclass
 __all__ = ["Job", "SchedulingResult", "weighted_job_scheduling"]
 
-
 @dataclass(frozen=True)
 class Job:
     start: int
@@ -20,7 +19,6 @@ class Job:
 class SchedulingResult:
     max_profit: int
     selected_jobs: list[Job]
-
 
 def weighted_job_scheduling(jobs: list[Job]) -> SchedulingResult:
     

@@ -3,7 +3,7 @@ import math
 import sys
 import unittest
 from pathlib import Path
-from avl_tree import AVLTree  # noqa: E402
+from avl_tree import AVLTree 
 
 class TestAVLTree(unittest.TestCase):
     """Correctness tests for :class:`AVLTree`, including balance guarantees."""

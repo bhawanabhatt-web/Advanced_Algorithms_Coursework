@@ -2,11 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Generic, TypeVar
-
 V = TypeVar("V")
-
 __all__ = ["MinHeap"]
-
 
 @dataclass(frozen=True, slots=True)
 class _HeapEntry(Generic[V]):

@@ -1,11 +1,7 @@
-
 from __future__ import annotations
-
 import sys
 from pathlib import Path
-
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  
-
 from common.generator import random_floats, random_unique_integers 
 from common.utils import get_logger  
 from Task1.avl_tree import AVLTree  
@@ -15,9 +11,7 @@ from Task1.hash_table import HashTable
 from Task1.min_heap import MinHeap  
 
 logger = get_logger(__name__)
-
 DEMO_CITY_COUNT = 10
-
 
 def build_demo_cities(count: int = DEMO_CITY_COUNT) -> list[City]:
     

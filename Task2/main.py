@@ -11,14 +11,12 @@ from bellman_ford import bellman_ford
 
 logger = get_logger(__name__)
 
-
 def build_demo_directed_graph() -> Graph:
     """Build the small textbook-style directed graph used for Dijkstra/Bellman-Ford demos."""
     graph = Graph(num_vertices=5, directed=True)
     for u, v, w in [(0, 1, 4), (0, 2, 1), (2, 1, 2), (1, 3, 1), (2, 3, 5), (3, 4, 3)]:
         graph.add_edge(u, v, w)
     return graph
-
 
 def build_demo_undirected_graph() -> Graph:
     """Build a small undirected graph used for the Prim MST demo."""
@@ -28,7 +26,6 @@ def build_demo_undirected_graph() -> Graph:
     ]:
         graph.add_edge(u, v, w)
     return graph
-
 
 def build_demo_negative_cycle_graph() -> Graph:
     """Build a small directed graph containing a negative-weight cycle."""

@@ -10,7 +10,6 @@ from common.utils import EXCEL_DIR, PLOTS_DIR, RAW_DATA_DIR, export_to_csv, get_
 from Task2.graph import Graph 
 from parallel_bfs import parallel_bfs 
 from sequential_bfs import sequential_bfs 
-
 logger = get_logger(__name__)
 
 GRAPH_SIZE: int = 20_000
@@ -18,7 +17,6 @@ EDGE_PROBABILITY: float = 0.0015
 THREAD_COUNTS: tuple[int, ...] = (1, 2, 4, 8)
 REPEATS: int = 5
 SEED: int = 42
-
 
 def generate_benchmark_graph(
     num_vertices: int = GRAPH_SIZE, edge_probability: float = EDGE_PROBABILITY, seed: int = SEED

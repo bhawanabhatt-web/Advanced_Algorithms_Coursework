@@ -1,14 +1,10 @@
 from __future__ import annotations
-
 from typing import Generic, Optional, TypeVar
-
 V = TypeVar("V")
-
 __all__ = ["HashTable"]
 
 _DEFAULT_CAPACITY = 16
 _MAX_LOAD_FACTOR = 0.75
-
 
 class HashTable(Generic[V]):
     
