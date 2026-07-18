@@ -95,7 +95,7 @@ Each task includes pseudocode, a from-scratch Python implementation, complexity 
 - **Task 4:** All three bin-packing heuristics reach the same solution quality on large inputs, but Local Search is fastest, followed by Simulated Annealing, with First-Fit Decreasing slowest at scale.
 - **Task 5:** Due to Python's Global Interpreter Lock (GIL), multi-threaded BFS does **not** outperform the sequential version for this CPU-bound workload — speedup stayed around 0.32× regardless of thread count.
 
-Full experimental tables, figures, and discussion are available in the report: [`Bhawana_Kumari_Bhatta_240620.pdf`](./Bhawana_Kumari_Bhatta_240620.pdf).
+
 
 ---
 
@@ -164,17 +164,6 @@ Or run the full suite from the project root:
 ```bash
 python -m unittest discover
 ```
-
----
-
-## References
-
-- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (4th ed.). MIT Press.
-- Goodrich, M. T., Tamassia, R., & Goldwasser, M. H. (2014). *Data Structures and Algorithms in Python*. John Wiley & Sons.
-- Dynamic Programming. (n.d.). Georgia Institute of Technology. https://faculty.cc.gatech.edu/~ladha/algo/L9.pdf
-- Warnsdorff's Algorithm for Knight's Tour Problem. (n.d.). GeeksforGeeks. https://www.geeksforgeeks.org/dsa/warnsdorffs-algorithm-knights-tour-problem/
-- Bin Packing Problem. (n.d.). ScienceDirect Topics. https://www.sciencedirect.com/topics/computer-science/bin-packing-problem
-- Global Interpreter Lock. (n.d.). python.org. https://wiki.python.org/moin/GlobalInterpreterLock
 
 ---
 
