@@ -1,10 +1,5 @@
 # Advanced Algorithms Coursework (ST5003CEM)
 
-Individual coursework for **ST5003CEM – Advanced Algorithms**, Soffwarica College of IT & E-Commerce, in collaboration with Coventry University (March Intake 2026).
-
-**Author:** Bhawana Kumari Bhatta (Coventry ID: 15938314)
-**Module Leader:** Hikmat Saud
-
 This repository contains the full Python implementation, unit tests, benchmarks, and plots for five tasks covering efficient data structures, graph algorithms, algorithmic design strategies, NP-Hard heuristics, and concurrent programming.
 
 ---
